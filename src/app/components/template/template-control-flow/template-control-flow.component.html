@@ -1,6 +1,6 @@
 <h2>Control Flow</h2>
 
-<h3>IF, FOR</h3>
+<h3>IF, FOR, SWITCH CASE</h3>
 
 <!-- @if (loadingData$ | async; as data){
   <ul>
@@ -12,7 +12,7 @@
 } @else{
   <p>Carregando...</p>
   <p>Maria</p>
-} -->
+} 
 
 @for(
 item of itens; track item.name;
@@ -34,4 +34,22 @@ let o = $odd;
 <hr>
 
 <input #name type="text">
-<button (click)="addNewName(name.value)">Add Name</button>
+<button (click)="addNewName(name.value)">Add Name</button> 
+
+<ul>
+  @for(item of itens; track item.name)
+  {
+  <li>{{item.name}}</li>
+  }
+  @empty{
+    <li>Não contém valores.</li>
+    }
+
+</ul> 
+-->
+
+@switch ('A'){
+  @case('A'){
+    <p>Sim, sua letra é A.</p>
+  }
+}
